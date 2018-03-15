@@ -1,0 +1,42 @@
+修改WordPress代码高亮插件SyntaxHighlighter的字体大小
+SyntaxHighlighter Evolved 是 WordPress 码农必备的一款插件，功能是实现代码高亮显示。这款插件应该是 WordPress 使用量最广泛的一款代码高亮插件了。但该插件的设计人员不知道是怎么想的，用的那么大的字体来显示代码，让原本就复杂的代码看起来眼花缭乱的。特别是当一行代码很长时，更是显得很乱。
+
+要修改 SyntaxHighlighter Evolved 插件的字体，其实很简单，编辑 wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css，修改如下两个地方：
+
+.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+  -moz-border-radius: 0 0 0 0 !important;
+  -webkit-border-radius: 0 0 0 0 !important;
+  background: none !important;
+  border: 0 !important;
+  bottom: auto !important;
+  float: none !important;
+  height: auto !important;
+  left: auto !important;
+  line-height: 1.5em !important;   /* 行间距加到1.5em刚刚好 */
+  margin: 0 !important;
+  outline: 0 !important;
+  overflow: visible !important;
+  padding: 2px !important;    /* 加个内边框吧 */
+  position: static !important;
+  right: auto !important;
+  text-align: left !important;
+  top: auto !important;
+  vertical-align: baseline !important;
+  width: auto !important;
+  box-sizing: content-box !important;
+  font-family: "Consolas", "Courier New", monospace !important; /* 经测试，这几个字体最美观 */
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-size: 13px !important;  /* 这里我改成了13px */
+  /*min-height: inherit !important; */
+  /*min-height: auto !important;*/
+……
